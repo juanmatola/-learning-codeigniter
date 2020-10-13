@@ -1,0 +1,27 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+  }
+  
+  /*----Navbar----*/
+  
+  .navbar-custom{ 
+      box-shadow: 2px 2px 5px #000000;
+      min-height: 80px;
+      background-color: black;
+  }
+  .navbar-custom .active {
+    border-bottom: 2px solid white;
+  }
+  
+    /*----Header----*/
+  
+  .header-home{
+      height: 100vh;
+      width: auto;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding-top: 80px;
+  }
