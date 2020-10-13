@@ -1,6 +1,6 @@
 # Learning CodeIgniter 4 Framework
 
-## below official README.md
+## official README.md below
 
 ## What is CodeIgniter?
 
