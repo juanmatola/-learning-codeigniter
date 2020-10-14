@@ -20,7 +20,4 @@ class Contacto extends BaseController
         echo '<br>';
         echo 'Esta es la pagina de contacto';
     }
-
-	//--------------------------------------------------------------------
-
 }

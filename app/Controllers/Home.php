@@ -16,6 +16,4 @@ class Home extends BaseController
 		echo view('pages/home', $send);
 		echo view('templates/footer');
 	}
-
-	//--------------------------------------------------------------------
 }

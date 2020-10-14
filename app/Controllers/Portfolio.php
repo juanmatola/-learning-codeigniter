@@ -15,6 +15,4 @@ class Portfolio extends BaseController
 		echo view('pages/portfolio');
 		echo view('templates/footer');
 	}
-
-	//--------------------------------------------------------------------
 }
