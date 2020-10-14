@@ -6,7 +6,8 @@ class Portfolio extends BaseController
 		"site_name" => "Tu Portfolio",
 		"site_logo" => "Tu-Logo",
 		"site_description" => "Tu-Descripcion",
-		"page" => "porfolio"
+		"page" => "porfolio",
+		"stylesheets" => ["portfolio"]
 	];
 
 	public function index()

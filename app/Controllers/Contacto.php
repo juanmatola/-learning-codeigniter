@@ -7,7 +7,8 @@ class Contacto extends BaseController
 		"site_name" => "Tu Portfolio",
 		"site_logo" => "Tu-Logo",
         "site_description" => "Tu-Descripcion",
-		"page" => "contacto"
+        "page" => "contacto",
+        "stylesheets" => ["contacto"]
     ];
     
 	public function index()
