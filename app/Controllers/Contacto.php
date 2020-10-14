@@ -6,7 +6,8 @@ class Contacto extends BaseController
     public $data = [
 		"site_name" => "Tu Portfolio",
 		"site_logo" => "Tu-Logo",
-		"site_description" => "Tu-Descripcion",
+        "site_description" => "Tu-Descripcion",
+		"page" => "contacto"
     ];
     
 	public function index()

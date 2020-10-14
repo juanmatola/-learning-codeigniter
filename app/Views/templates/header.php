@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - <?php echo $site_name ?></title>
+    <title><?php echo ucfirst($page) ?> - <?php echo $site_name ?></title>
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/home.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <meta name="description" content="<?php echo $site_description?>">
@@ -20,15 +20,15 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
 
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                    <li class="nav-item <?php if($page === "home"){ echo "active";} ?>">
+                        <a class="nav-link" href="/">Home</a>
                     </li>
 
-                    <li class="nav-item">
+                    <li class="nav-item <?php if($page === "porfolio"){ echo "active";} ?>">
                         <a class="nav-link" href="/portfolio">Portfolio</a>
                     </li>
                     
-                    <li class="nav-item">
+                    <li class="nav-item <?php if($page === "contacto"){ echo "active";} ?>">
                         <a class="nav-link" href="/contacto" tabindex="-1" aria-disabled="true">Contacto</a>
                     </li>
                 </ul>

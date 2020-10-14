@@ -6,8 +6,9 @@ class Home extends BaseController
 		"site_name" => "Tu Portfolio",
 		"site_logo" => "Tu-Logo",
 		"site_description" => "Tu-Descripcion",
+		"page" => "home"
 	];
-	
+
 	public function index()
 	{
 		$send = $this->data;
