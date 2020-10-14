@@ -1,13 +1,28 @@
 /*----Portfolio----*/
 
-#portfolio_galery{
+#portfolio_gallery{
     margin-top: 80px;
+    margin-bottom: 20px;
 }
 
-.portfolio-card {
-    height: 300px; 
+#gallery .gallery_image{
+    height: 300px;
     background-size: cover;
-    background-position: center; 
-    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-box-shadow: 10px -19px 37px -17px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px -19px 37px -17px rgba(0,0,0,0.75);
+    box-shadow: 10px -19px 37px -17px rgba(0,0,0,0.75);
+    transition: .5s;
+    z-index: 10;
 }
-  
+
+.gallery_image:hover{
+    transition: .5s;
+    transform: scale(1.05);
+}
+
+#gallery .card-footer{
+    /* border: 1px solid black; */
+    border: none;
+    z-index: 2000000;
+}
