@@ -10,7 +10,8 @@
                 <div class="form-group">
                     <input type="password" class="form-control" placeholder="Contraseña" id="exampleInputPassword1">
                 </div>
-                <div class="text-right">
+                <div class="text-center form__buttons">
+                    <a href="/">Regresar</a>
                     <button type="submit" class="btn btn-primary">Ingresar</button>
                 </div>
             </form>
