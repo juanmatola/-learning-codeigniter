@@ -3,5 +3,11 @@
 #portfolio_galery{
     margin-top: 80px;
 }
-  
+
+.portfolio-card {
+    height: 300px; 
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+}
   
