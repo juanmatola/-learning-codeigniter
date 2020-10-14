@@ -14,11 +14,7 @@ class Contacto extends BaseController
 	public function index()
 	{
         echo view('templates/header', $this->data);
-        echo '<br>';
-        echo '<br>';
-        echo '<br>';
-        echo '<br>';
-        echo '<br>';
-        echo 'Esta es la pagina de contacto';
+        echo '<p class="display-4">Esta es la pagina de contacto</p>';
+        echo view('templates/footer');
     }
 }
