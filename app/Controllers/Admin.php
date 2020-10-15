@@ -10,19 +10,17 @@ class Admin extends BaseController
 			return redirect()->to(base_url().'/admin/panel/');
 			exit;
 		}
-
-		echo view('admin/templates/header');
+		/*Sino muestro login*/ 
 		echo view('admin/login');
-		echo view('admin/templates/footer');
-		
 	}
 
 	public function panel(){
+		/*Si no está logeado, envio a login*/
 		if (false) {
 			return redirect()->to(base_url().'/admin/');
 			exit;
 		}
-
+		/*Muestro panel de admin*/
 		echo view('admin/templates/header');
 		echo "<h1>BIENVENIDO A LA ADMINISTRACION<h1>";
 		echo view('admin/templates/footer');
