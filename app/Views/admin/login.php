@@ -33,9 +33,5 @@
 
     <!-- Custom JS -->
     <script src="<?php echo base_url().'/assets/js/admin/login.js' ?>"></script>
-    <!-- Jquery -->
-    <script src="<?php echo base_url().'/assets/libs/jquery-3.5.1/jquery.min.js' ?>"></script>
-    <!-- Bootstrap JS + Popper -->
-    <script src="<?php echo base_url().'/assets/libs/bootstrap-4.5.3/js/bootstrap.bundle.min.js' ?>"></script>
 </body>
 </html>
