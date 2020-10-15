@@ -27,4 +27,5 @@ class Admin extends BaseController
 		echo "<h1>BIENVENIDO A LA ADMINISTRACION<h1>";
 		echo view('admin/templates/footer');
 	}
+
 }
