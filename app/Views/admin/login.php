@@ -16,11 +16,11 @@
                 <img src="<?php echo base_url().'/assets/img/admin/athomic_logo.png'; ?>" alt="" class="login__container--img">
                 <form action="" method="POST">
                     <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Usuario" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input type="email" class="form-control" placeholder="Usuario" id="exampleInputEmail1" aria-describedby="emailHelp" autocomplete="on">
                         <small id="emailHelp" class="form-text text-muted">Nunca compartiremos su correo electrónico con nadie más.</small>
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" placeholder="Contraseña" id="exampleInputPassword1">
+                        <input type="password" class="form-control" placeholder="Contraseña" id="exampleInputPassword1" autocomplete="on">
                     </div>
                     <div class="text-center form__buttons">
                         <a href="/">Regresar</a>
