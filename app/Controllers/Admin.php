@@ -37,10 +37,10 @@ class Admin extends BaseController
 
 	public function login ($user = null, $pass = null){
 		$userModel = new LoginModel();
-		$userData = $userModel->getNews();
+		$userData = $userModel->getUser();
 		
 		//FALTA RECIBIR DATOS DE FORMULARIO DESDE INDEX (FORMULARIO DE LOGIN)
-		
+
 		$user = 'juanmatola';
 		$pass = 'Juan.314159286540';
 		if($user === $userData['0']['username'] && $pass === $userData['0']['password'])
@@ -62,7 +62,7 @@ class Admin extends BaseController
 			}
 		}else {
 			//manejar error de login
-			return redirect()->to(base_url().'/admin/?login=');
+			return redirect()->to(base_url().'/admin/?login=data_err');
 		}
 	}
 
