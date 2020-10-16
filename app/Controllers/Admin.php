@@ -5,11 +5,10 @@ use App\Models\LoginModel; //llamo al modelo que conecta con la base de usuario
 class Admin extends BaseController
 {
 
-	public function index()
-	{
+	public function index(){
 		session_start();
 
-		/*Si ya esta logueado, redirecciono a administración*/
+		/*Si ya esta logueado, redirecciono a panel*/
 		if($this->sessionStatus()){
 			return redirect()->to(base_url().'/admin/panel/');
 			exit;
@@ -72,7 +71,7 @@ class Admin extends BaseController
 		return redirect()->to(base_url());
 	}
 
-	// Metodo q devuelve el estado de sesion TRUE = sesion active. FALSE = sesion none o disable
+	// Metodo q devuelve si el usuario esta conectado o no
 	public function sessionStatus() {
 		$sessionStatus = session_status();
 		if ($sessionStatus === 2 && !empty($_SESSION['username']) && !empty($_SESSION['password'])) {

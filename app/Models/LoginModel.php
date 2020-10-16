@@ -8,9 +8,9 @@ class LoginModel extends Model
     protected $table = 'is_user';
     protected $primaryKey = 'id';
     protected $returnType =  'array';
-    //protected $allowedFields = ['username', 'password']; declaro sobre que dato de tabla voy a poder modificar desde el modelo
+    protected $allowedFields = []; //declaro sobre que dato de tabla voy a poder modificar desde el modelo
 
-    /* Metodo para traer o todas los datos o solo los pedidos por el $slug */
+    /* Metodo para traer todos los datos de usuario*/
     public function getUser()
     {
         return $this->findAll();
