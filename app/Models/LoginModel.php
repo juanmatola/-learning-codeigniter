@@ -11,15 +11,8 @@ class LoginModel extends Model
     //protected $allowedFields = ['username', 'password']; declaro sobre que dato de tabla voy a poder modificar desde el modelo
 
     /* Metodo para traer o todas los datos o solo los pedidos por el $slug */
-    public function getNews($slug = false)
+    public function getUser()
     {
-        if ($slug === false)
-        {
-            return $this->findAll();
-        }
-
-        return $this->asArray()
-                    ->where(['slug' => $slug])
-                    ->first();
+        return $this->findAll();
     }
 }
