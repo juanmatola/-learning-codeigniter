@@ -8,7 +8,7 @@ class Admin extends BaseController
 	public function __construct(){
 		helper('form');
 	}
-	
+
 	public function index(){
 		session_start();
 
@@ -39,14 +39,18 @@ class Admin extends BaseController
 
 
 	public function login ($user = null, $pass = null){
+		/* Recibo datos del formulario */
+		$req = \Config\Services::request();
+		$formData = array(
+			'username'=>$req->getPostGet('username'),
+			'password'=>$req->getPostGet('password')
+		);
+		/* Consulto datos de usuarios a db */
 		$userModel = new LoginModel();
 		$userData = $userModel->getUser();
 		
-		//FALTA RECIBIR DATOS DE FORMULARIO DESDE INDEX (FORMULARIO DE LOGIN)
 
-		$user = 'juanmatola';
-		$pass = 'Juan.314159286540';
-		if($user === $userData['0']['username'] && $pass === $userData['0']['password'])
+		if($formData['username'] === $userData['0']['username'] && $formData['password'] === $userData['0']['password'])
 		{
 			//INICIAR SESION
 			session_start();
