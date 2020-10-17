@@ -32,32 +32,26 @@
       <div class="direct-contact-container">
 
         <ul class="contact-list">
-          <li class="list-item"><i class="fa fa-map-marker fa-2x"><span class="contact-text place">Seattle | WA</span></i></li>
+          <li class="list-item"><i class="fas fa-map-marker-alt "></i><span class="contact-text place">Seattle | WA</span></i></li>
           
-          <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a href="tel:1-212-555-5555" title="Give me a call">(212) 555-2368</a></span></i></li>
+          <li class="list-item"><i class="fa fa-phone"><span class="contact-text phone"><a href="tel:1-212-555-5555" title="Give me a call">(212) 555-2368</a></span></i></li>
           
-          <li class="list-item"><i class="fa fa-envelope fa-2x"><span class="contact-text gmail"><a href="mailto:#" title="Send me an email">emailme@gmail.com</a></span></i></li>
+          <li class="list-item"><i class="fa fa-envelope"><span class="contact-text gmail"><a href="mailto:#" title="Send me an email">emailme@gmail.com</a></span></i></li>
           
         </ul>
 
         <hr>
         <ul class="social-media-list">
-          <!-- <li><a href="#" target="_blank" class="contact-icon">
-            <i class="fa fa-github" aria-hidden="true"></i></a>
-          </li> -->
           <li><a href="#" target="_blank" class="contact-icon">
-            <!-- <i class="fa fa-twitter" aria-hidden="true"></i> -->
-            TW
+                <i class="fab fa-instagram"></i>
             </a>
           </li>
           <li><a href="#" target="_blank" class="contact-icon">
-            <!-- <i class="fa fa-instagram" aria-hidden="true"></i> -->
-            IN
+             <i class="fab fa-facebook-f"></i>
             </a>
           </li>
           <li><a href="#" target="_blank" class="contact-icon">
-            <!-- <i class="fa fa-codepen" aria-hidden="true"></i> -->
-            FB
+                <i class="fab fa-twitter"></i>
             </a>
           </li>
         </ul>
