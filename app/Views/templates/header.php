@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo ucfirst($page) ?> - <?php echo $site_name ?></title>
     <meta name="description" content="<?php echo $site_description?>">
+    <!-- Fonts -->
+    <link href="<?php echo base_url().'/assets/libs/fontawesome-free/css/all.min.css'; ?>" rel="stylesheet" type="text/css">
     <!-- General CSS -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assets/css/style.css">
     <!-- Page CSS -->
