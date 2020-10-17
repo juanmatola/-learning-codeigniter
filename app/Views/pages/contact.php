@@ -56,13 +56,10 @@
         </ul>
         <hr>
 
-        <div class="copyright">&copy; Develop by <a href="http://athomic.com.ar">athomic</a></div>
+        <div class="copyright">&copy; Developed by <a href="http://athomic.com.ar">athomic</a></div>
 
       </div>
     
   </div>
   
 </section>
-<style>
-
-</style> 
