@@ -3,4 +3,4 @@
     <!-- Ejemplo de como mostrar datos recibidos desade el controlador -->
     <h1 class="text-center text-white display-4"><?php echo $site_name; ?></h1>
     
-</header
+</header>
