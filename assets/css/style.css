@@ -14,4 +14,12 @@ body{
 .navbar-custom .active {
     border-bottom: 2px solid white;
 }
+
+/*----Footer----*/
+
+footer{
+    background-color: black;
+    min-height: 30px;
+  }
+  
   
