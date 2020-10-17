@@ -14,22 +14,19 @@
         <div class="container h-100 d-flex flex-column justify-content-center align-items-center">
             <div class="login__container fade">
                 <img src="<?php echo base_url().'/assets/img/admin/athomic_logo.png'; ?>" alt="" class="login__container--img">
-                <?php echo form_open() ?>
+                <?php echo form_open('/admin/login') ?>
                 
                 <form action="" method="POST">
                     <div class="form-group">
-                        <!-- <input type="text" class="form-control" placeholder="Usuario" id="exampleInputEmail1" aria-describedby="emailHelp" autocomplete="on"> -->
                         <?php echo form_input(array('name'=>'username','type'=>'text','class'=>'form-control', 'placeholder'=>'Usuario', 'autocomplete'=>'on'))?>
                         <small id="emailHelp" class="form-text text-muted">Nunca compartiremos su correo electrónico con nadie más.</small>
                     </div>
                     <div class="form-group">
-                        <!-- <input type="password" class="form-control" placeholder="Contraseña" id="exampleInputPassword1" autocomplete="on"> -->
                         <?php echo form_input(array('name'=>'password','type'=>'password','class'=>'form-control', 'placeholder'=>'Contraseña', 'autocomplete'=>'on'))?>
                     </div>
                     <div class="text-center form__buttons">
                         <a href="/">Regresar</a>
                         <?php echo form_submit(array('type'=>'submit','class'=>'btn btn-primary','value'=>'Ingresar'))?>
-                        <!-- <button type="submit" class="btn btn-primary">Ingresar</button> -->
                     </div>
                 </form>
                 <?php echo form_close() ?>
