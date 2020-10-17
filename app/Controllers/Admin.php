@@ -5,6 +5,10 @@ use App\Models\LoginModel; //llamo al modelo que conecta con la base de usuario
 class Admin extends BaseController
 {
 
+	public function __construct(){
+		helper('form');
+	}
+	
 	public function index(){
 		session_start();
 
