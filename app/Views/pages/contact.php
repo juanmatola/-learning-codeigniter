@@ -28,7 +28,6 @@
       
     </form>
     
-    
       <div class="direct-contact-container">
 
         <ul class="contact-list">
@@ -36,7 +35,7 @@
           
           <li class="list-item"><i class="fa fa-phone"><span class="contact-text phone"><a href="tel:1-212-555-5555" title="Give me a call">(212) 555-2368</a></span></i></li>
           
-          <li class="list-item"><i class="fa fa-envelope"><span class="contact-text gmail"><a href="mailto:#" title="Send me an email">emailme@gmail.com</a></span></i></li>
+          <li class="list-item"><i class="fa fa-envelope "><span class="contact-text gmail"><a href="mailto:#" title="Send me an email">emailme@gmail.com</a></span></i></li>
           
         </ul>
 
@@ -97,11 +96,9 @@ body {
   max-width: 800px;
 }
 
-/* Begin Left Contact Page */
 .form-horizontal {
   float: left;
   max-width: 400px;
-  font-family: 'Lato';
   font-weight: 400;
 }
 
