@@ -1,28 +1,35 @@
-/*----Portfolio----*/
-
 #portfolio_gallery{
     margin-top: 80px;
     margin-bottom: 20px;
-}
-
-#gallery .gallery_image{
+  }
+  
+  #gallery .gallery_image{
     height: 300px;
     background-size: cover;
     background-position: center;
-    -webkit-box-shadow: 10px -19px 37px -17px rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px -19px 37px -17px rgba(0,0,0,0.75);
-    box-shadow: 10px -19px 37px -17px rgba(0,0,0,0.75);
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+    transition: 0.5s;
+  }
+  
+  #gallery .gallery_image:hover{
+    filter: grayscale(100%);
+    transition: 0.5s;
+  }
+  .gallery-object{
     transition: .5s;
-    z-index: 10;
-}
-
-.gallery_image:hover{
-    transition: .5s;
+  }
+  
+  .gallery-object:hover{
     transform: scale(1.05);
-}
-
-#gallery .card-footer{
-    /* border: 1px solid black; */
-    border: none;
-    z-index: 2000000;
-}
+    transition: 0.5s;
+  }
+  
+  #gallery .card-footer{
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    background-color: black;
+    color: rgb(235, 235, 235);
+  }
