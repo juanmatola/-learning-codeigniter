@@ -35,10 +35,10 @@
                 <span aria-hidden="true">×</span>
             </button>
             </div>
-            <div class="modal-body">Selecciona "Logout" si estás listo para cerrar sesion.</div>
+            <div class="modal-body">Selecciona "Cerrar Sesión" si estás listo para cerrar sesion.</div>
             <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="<?php echo base_url().'/admin/logout';?>">Logout</a>
+            <a class="btn btn-primary" href="<?php echo base_url().'/admin/logout';?>">Cerrar Sesión</a>
             </div>
         </div>
         </div>
