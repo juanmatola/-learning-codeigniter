@@ -1,14 +1,8 @@
 <section id="contact">
   
-  <h1 class="section-header">CONTACT</h1>
+  <h1 class="section-header">CONTACTO</h1>
   
   <div class="contact-wrapper">
-    
-      <!---------------- 
-
-      CONTACT PAGE LEFT 
-    
-      -----------------> 
     
     <form class="form-horizontal text-center" role="form" method="post" action="#">
        
@@ -26,19 +20,14 @@
 
       <textarea class="form-control" rows="10" placeholder="MESSAGE" name="message"></textarea>
       
-      <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
+      <button class="btn btn-primary send-button" id="submit" type="submit" value="ENVIAR">
         <div class="button">
-          <i class="fa fa-paper-plane"></i><span class="send-text">SEND</span>
+          <i class="fa fa-paper-plane"></i><span class="send-text">ENVIAR</span>
         </div>
       </button>
       
     </form>
     
-      <!---------------- 
-
-      CONTACT PAGE RIGHT 
-    
-      -----------------> 
     
       <div class="direct-contact-container">
 
@@ -62,15 +51,19 @@
             </a>
           </li>
           <li><a href="#" target="_blank" class="contact-icon">
-            <i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <!-- <i class="fa fa-instagram" aria-hidden="true"></i> -->
+            IN
+            </a>
           </li>
           <li><a href="#" target="_blank" class="contact-icon">
-            <i class="fa fa-codepen" aria-hidden="true"></i></a>
+            <!-- <i class="fa fa-codepen" aria-hidden="true"></i> -->
+            FB
+            </a>
           </li>
         </ul>
         <hr>
 
-        <div class="copyright">&copy; ALL OF THE RIGHTS RESERVED</div>
+        <div class="copyright">&copy; Develop by <a href="http://athomic.com.ar">athomic</a></div>
 
       </div>
     
@@ -86,7 +79,7 @@ body {
 
 #contact {
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 80px);
   background-color: #111;
   overflow: hidden;
   padding-bottom: 200px;
@@ -270,7 +263,7 @@ hr {
 /* Begin Media Queries*/
 @media screen and (max-width: 760px) {
     #contact {
-        height: 1000px;
+        height: unset;
     }
   .section-header {
     font-size: 65px;
