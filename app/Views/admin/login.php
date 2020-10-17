@@ -28,7 +28,8 @@
                     </div>
                     <div class="text-center form__buttons">
                         <a href="/">Regresar</a>
-                        <button type="submit" class="btn btn-primary">Ingresar</button>
+                        <?php echo form_submit(array('type'=>'submit','class'=>'btn btn-primary','value'=>'Ingresar'))?>
+                        <!-- <button type="submit" class="btn btn-primary">Ingresar</button> -->
                     </div>
                 </form>
                 <?php echo form_close() ?>
