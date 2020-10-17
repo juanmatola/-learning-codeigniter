@@ -19,7 +19,7 @@
                         </div> -->
 
                         <div class="col-12 col-sm-6 col-lg-4 my-3">
-                            <div class="gallery_image" style="background-image: url(assets/img/example1.jpg);"></div>
+                            <div class="gallery_image" style="background-image: url(<?php echo base_url();?>/assets/img/example1.jpg);"></div>
                             <div class="card-footer">
                                 <small class="text-muted"> Titulo 1 </small>
                             </div>
