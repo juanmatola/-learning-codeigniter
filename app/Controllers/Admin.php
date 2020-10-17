@@ -49,7 +49,7 @@ class Admin extends BaseController
 		$userModel = new LoginModel();
 		$userData = $userModel->getUser();
 		
-
+		/* Comparo datos recibidos con bd */
 		if($formData['username'] === $userData['0']['username'] && $formData['password'] === $userData['0']['password'])
 		{
 			//INICIAR SESION
