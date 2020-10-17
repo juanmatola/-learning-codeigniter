@@ -50,7 +50,7 @@ class Admin extends BaseController
 		$userData = $userModel->getUser();
 		
 		/* Comparo datos recibidos con bd */
-		if($formData['username'] === $userData['0']['username'] && $formData['password'] === $userData['0']['password'])
+		if($formData['username'] === $userData['0']['username'] && md5($formData['password']) === $userData['0']['password'])
 		{
 			//INICIAR SESION
 			session_start();
