@@ -7,14 +7,14 @@
     <form class="form-horizontal text-center" role="form" method="post" action="#">
        
       <div class="form-group">
-        <div class="col-sm-12">
-          <input type="text" class="form-control" id="name" placeholder="NAME" name="name" value="">
+        <div class="w-100">
+          <input type="text" class="form-control" id="name" placeholder="NAME" name="name">
         </div>
       </div>
 
       <div class="form-group">
-        <div class="col-sm-12">
-          <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email" value="">
+        <div class="w-100">
+          <input type="email" class="form-control" id="email" placeholder="EMAIL" name="email">
         </div>
       </div>
 
