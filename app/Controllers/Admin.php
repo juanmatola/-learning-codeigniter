@@ -21,7 +21,8 @@ class Admin extends BaseController
 
 	public function login ($user = null, $pass = null){
 		/* Recibo datos del formulario */
-		$req = \Config\Services::request();
+		//$req = \Config\Services::request();
+		$req = $this->request;
 		$formData = array(
 			'username'=>$req->getPostGet('username'),
 			'password'=>$req->getPostGet('password')
@@ -69,7 +70,7 @@ class Admin extends BaseController
 		return redirect()->to(base_url());
 	}
 
-	//Privated Mothods
+	//Sessions methods
 
 	private function sessionStatus() {
 		$sessionStatus = session_status();
@@ -92,9 +93,13 @@ class Admin extends BaseController
 		}
 	}
 
+	//Posts methods
+
 	private function newPost() {
 		//solo podra llamarse desde panel
 		//Nuevo post
+
+		
 	}
 
 	private function modifyPost(){
