@@ -1,0 +1,1 @@
+//modelo par manejar los datos de posteos
