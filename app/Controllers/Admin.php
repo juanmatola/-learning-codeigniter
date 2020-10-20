@@ -1,6 +1,7 @@
 <?php namespace App\Controllers;
 
 use App\Models\LoginModel;
+use App\Models\PostsModel;
 
 class Admin extends BaseController
 {
@@ -68,6 +69,8 @@ class Admin extends BaseController
 		return redirect()->to(base_url());
 	}
 
+	//Privated Mothods
+
 	private function sessionStatus() {
 		$sessionStatus = session_status();
 		if ($sessionStatus === 2 && !empty($_SESSION['username']) && !empty($_SESSION['password'])) {
@@ -87,5 +90,20 @@ class Admin extends BaseController
 		}else{
 			return false;
 		}
+	}
+
+	private function newPost() {
+		//solo podra llamarse desde panel
+		//Nuevo post
+	}
+
+	private function modifyPost(){
+		//solo podra llamarse desde panel
+		//Modifica post prexistente
+	}
+
+	private function deletePost(){
+		//solo podra llamarse desde panel	
+		//Eliminar post
 	}
 }
