@@ -8,7 +8,7 @@
        
       <div class="form-group">
         <div class="w-100">
-          <input type="text" class="form-control" id="name" placeholder="NAME" name="name">
+          <input type="text" class="form-control" id="name" placeholder="NOMBRE" name="name">
         </div>
       </div>
 
@@ -18,7 +18,7 @@
         </div>
       </div>
 
-      <textarea class="form-control" rows="10" placeholder="MESSAGE" name="message"></textarea>
+      <textarea class="form-control" rows="5" placeholder="MENSAJE" name="message"></textarea>
       
       <button class="btn btn-primary send-button" id="submit" type="submit" value="ENVIAR">
         <div class="button">
@@ -36,10 +36,10 @@
           <li class="list-item"><i class="fa fa-phone"><span class="contact-text phone"><a href="tel:1-212-555-5555" title="Give me a call">(212) 555-2368</a></span></i></li>
           
           <li class="list-item"><i class="fa fa-envelope "><span class="contact-text gmail"><a href="mailto:#" title="Send me an email">emailme@gmail.com</a></span></i></li>
-          
         </ul>
 
         <hr>
+
         <ul class="social-media-list">
           <li><a href="#" target="_blank" class="contact-icon">
                 <i class="fab fa-instagram"></i>
@@ -54,10 +54,6 @@
             </a>
           </li>
         </ul>
-        <hr>
-
-        <div class="copyright">&copy; Developed by <a href="http://athomic.com.ar">athomic</a></div>
-
       </div>
     
   </div>
