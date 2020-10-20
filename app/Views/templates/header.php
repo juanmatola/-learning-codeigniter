@@ -37,7 +37,7 @@
                     </li>
                     
                     <li class="nav-item <?php if($page === "contacto"){ echo "active";} ?>">
-                        <a class="nav-link" href="/contacto" tabindex="-1" aria-disabled="true">Contacto</a>
+                        <a class="nav-link" href="/contacto">Contacto</a>
                     </li>
                 </ul>
             </div>
