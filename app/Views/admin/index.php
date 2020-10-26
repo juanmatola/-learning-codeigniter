@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-6 col-12 text-center text-md-left"><h1>Posts</h1></div>
-    <div class="col-md-6 col-12 text-center text-md-right"><button type="button" class="btn btn-success">+ Nuevo Post</button></div>
+    <div class="col-md-6 col-12 text-center text-md-right my-2"><button type="button" class="btn btn-success">+ Nuevo Post</button></div>
 </div>
 
 <table class="table">
