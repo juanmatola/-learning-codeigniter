@@ -22,7 +22,7 @@
       <td><img src="https://via.placeholder.com/150" class="img-fluid"></td>
       <td>
         <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
-        <button type="button" class="btn btn-success"><i class="far fa-edit"></i></button>
+        <button type="button" class="btn btn-success my-2 my-md-0"><i class="far fa-edit"></i></button>
       </td>
     </tr>
   <?php } ?>
