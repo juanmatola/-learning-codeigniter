@@ -2,7 +2,7 @@
 
 use CodeIgniter\Model;
 
-class PostsModels extends Model
+class PostsModel extends Model
 {
     /* Le digo al modelo sobre que tabla hacer las consultas y otras configuraciones sobre el modelo */
     protected $table = 'is_post';
