@@ -103,19 +103,31 @@ class Admin extends BaseController
 
 	//Posts methods
 
-	private function newPost() {
+	public function newPost() {
+		session_start();
 		if (!$this->sessionStatus()) {
-			return false;
+			session_start();
+			return redirect()->to(base_url().'/admin/?login=false');
 		}
+
+		echo 'Agregar nuevo post';
 	}
 
-	private function modifyPost(){
-		//solo podra llamarse desde panel
-		//Modifica post prexistente
+	public function modifyPost(){
+		session_start();
+		if (!$this->sessionStatus()) {
+			return redirect()->to(base_url().'/admin/?login=false');
+		}
+
+		echo 'Modificar un post';
 	}
 
-	private function deletePost(){
-		//solo podra llamarse desde panel	
-		//Eliminar post
+	public function deletePost(){
+		session_start();
+		if (!$this->sessionStatus()) {
+			return redirect()->to(base_url().'/admin/?login=false');
+		}
+
+		echo 'Eliminar un post';
 	}
 }
