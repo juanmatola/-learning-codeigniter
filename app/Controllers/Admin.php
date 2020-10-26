@@ -53,6 +53,9 @@ class Admin extends BaseController
 	public function panel(){
 		session_start();
 
+		$postsModel = new PostsModel();
+		$posts = $postsModel->getPosts();
+
 		/*Si está logeado muestro panel*/
 		if ($this->sessionStatus()) {
 
@@ -60,7 +63,7 @@ class Admin extends BaseController
 				'username' => $_SESSION['username'],
 			];
 			$data = [
-
+				'posts' => $posts,
 			];
 			echo view('admin/templates/header', $userData);
 			echo view('admin/index', $data);
@@ -106,7 +109,6 @@ class Admin extends BaseController
 	public function newPost() {
 		session_start();
 		if (!$this->sessionStatus()) {
-			session_start();
 			return redirect()->to(base_url().'/admin/?login=false');
 		}
 

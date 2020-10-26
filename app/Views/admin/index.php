@@ -14,12 +14,25 @@
     </tr>
   </thead>
   <tbody>
-  <?php for ($i=0; $i < 8; $i++) { ?>
+    <?php 
+    
+    foreach ($posts as $post) {
+      //print_r($post);
+      echo $post['title'];
+      echo '<br>';
+      echo $post['description'];
+      echo '<br>';
+      echo $post['image'];
+      echo '<br>';
+    }
+    
+    ?>
+  <?php foreach ($posts as $post) { ?>
     <tr>
-      <th scope="row"><?php echo $i?></th>
-      <td>Mark</td>
-      <td class="mobile-none">Otto</td>
-      <td><img src="https://via.placeholder.com/150" class="img-fluid"></td>
+      <th scope="row"><?php echo $post['id'];?></th>
+      <td><?php echo $post['title']; ?></td>
+      <td class="mobile-none"><?php echo $post['description']; ?></td>
+      <td><img src="<?php echo base_url().'/writable/uploads/portfolio/'.$post['image']; ?>" class="img-fluid"></td>
       <td>
         <button type="button" class="btn btn-danger"data-toggle="modal" data-target="#deleteModal" ><i class="far fa-trash-alt"></i></button>
         <button type="button" class="btn btn-success my-2 my-md-0"><i class="far fa-edit"></i></button>
