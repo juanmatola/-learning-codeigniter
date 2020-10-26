@@ -8,7 +8,7 @@ class PostsModels extends Model
     protected $table = 'is_post';
     protected $primaryKey = 'id';
     protected $returnType =  'array';
-    protected $allowedFields = []; //declaro sobre que dato de tabla voy a poder modificar desde el modelo
+    protected $allowedFields = ['title','description','image'];
 
     /* Metodo para traer todos los datos de usuario*/
     public function getPosts()
