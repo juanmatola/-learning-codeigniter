@@ -110,7 +110,28 @@ class Admin extends BaseController
 			return redirect()->to(base_url().'/admin/?login=false');
 		}
 
-		echo 'Agregar nuevo post';
+		//Obtengo informacion a cargar
+		$req = $this->request;
+		$img = $req->getFile('image');
+
+		//genero nombre para guardar
+		$imgName = $img->getRandomName();
+
+		//subo imagen
+		$path = './writable/uploads/portfolio/';
+		$img->move($path, $imgName);
+
+		$postData = array(
+			'title'=>$req->getPost('title'),
+			'description'=>$req->getPost('description'),
+			'image'=>$imgName,
+		);
+
+		//Guardo datos en db
+		$postsDb = new PostsModel();
+		$postsDb->insert($postData);
+
+		return redirect()->to(base_url().'/admin/panel?insert==okay');
 	}
 
 	public function modifyPost(){
