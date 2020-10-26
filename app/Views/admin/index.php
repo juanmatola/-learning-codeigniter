@@ -21,7 +21,7 @@
       <td class="mobile-none">Otto</td>
       <td><img src="https://via.placeholder.com/150" class="img-fluid"></td>
       <td>
-        <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+        <button type="button" class="btn btn-danger"data-toggle="modal" data-target="#deleteModal" ><i class="far fa-trash-alt"></i></button>
         <button type="button" class="btn btn-success my-2 my-md-0"><i class="far fa-edit"></i></button>
       </td>
     </tr>
