@@ -8,7 +8,7 @@
     <tr>
       <th scope="col">Id</th>
       <th scope="col">Título</th>
-      <th scope="col">Descripción</th>
+      <th class="mobile-none" scope="col">Descripción</th>
       <th scope="col">Imagen</th>
       <th scope="col">Acción</th>
     </tr>
@@ -18,7 +18,7 @@
     <tr>
       <th scope="row"><?php echo $i?></th>
       <td>Mark</td>
-      <td>Otto</td>
+      <td class="mobile-none">Otto</td>
       <td><img src="https://via.placeholder.com/150" class="img-fluid"></td>
       <td><button type="button" class="btn btn-danger">D</button><button type="button" class="btn btn-success">E</button></td>
     </tr>
