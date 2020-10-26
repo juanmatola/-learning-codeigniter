@@ -1,5 +1,7 @@
 <?php namespace App\Controllers;
 
+use App\Models\PostsModel;
+
 class Portfolio extends BaseController
 {
 	public $data = [
@@ -12,8 +14,12 @@ class Portfolio extends BaseController
 
 	public function index()
 	{
+		$postsModel = new PostsModel();
+		$postsData = [
+			'posts' => $postsModel->getPosts()
+		];
 		echo view('templates/header', $this->data);
-		echo view('pages/portfolio');
+		echo view('pages/portfolio', $postsData);
 		echo view('templates/footer');
 	}
 }
