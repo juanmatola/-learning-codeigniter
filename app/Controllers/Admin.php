@@ -56,7 +56,7 @@ class Admin extends BaseController
 		/*Si está logeado muestro panel*/
 		if ($this->sessionStatus()) {
 			echo view('admin/templates/header');
-			echo "<h1>BIENVENIDO A LA ADMINISTRACION<h1>";
+			echo view('admin/index');
 			echo view('admin/templates/footer');
 		}else{
 			return redirect()->to(base_url().'/admin/?login=false');
@@ -65,6 +65,7 @@ class Admin extends BaseController
 	}
 
 	public function logout() {
+
 		session_start();
 		session_destroy();
 		return redirect()->to(base_url());
@@ -96,10 +97,9 @@ class Admin extends BaseController
 	//Posts methods
 
 	private function newPost() {
-		//solo podra llamarse desde panel
-		//Nuevo post
-
-		
+		if (!$this->sessionStatus()) {
+			return false;
+		}
 	}
 
 	private function modifyPost(){
