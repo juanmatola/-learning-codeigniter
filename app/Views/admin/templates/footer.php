@@ -1,27 +1,17 @@
-            </div>
-            <!-- /.container-fluid -->
 
         </div>
-        <!-- End of Main Content -->
-
         <!-- Footer -->
-        <footer class="sticky-footer bg-white">
+        <footer class="sticky-footer bg-light py-3">
             <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-                <span>Copyright &copy; athomic 2020</span>
-            </div>
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; athomic 2020</span>
+                </div>
             </div>
         </footer>
         <!-- End of Footer -->
 
-        </div>
-        <!-- End of Content Wrapper -->
-
-    </div>
-    <!-- End of Page Wrapper -->
-
     <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
+    <a class="btn btn-outline-secondary rounded scrolltop_btn" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
 
@@ -45,13 +35,9 @@
     </div>
 
     
-    <!-- Bootstrap JS -->
+    <!-- JQuery -->
     <script src="<?php echo base_url().'/assets/libs/jquery-3.5.1/jquery.min.js' ?>"></script>
     <!-- Bootstrap JS + Popper -->
     <script src="<?php echo base_url().'/assets/libs/bootstrap-4.5.3/js/bootstrap.bundle.min.js' ?>"></script>
-    <!-- Core plugin JavaScript-->
-    <script src="<?php echo base_url().'/assets/libs/jquery-easing/jquery.easing.min.js' ?>"></script>
-    <!-- Custom scripts for all pages-->
-    <script src="<?php echo base_url().'/assets/js/admin/sb-admin-2.min.js' ?>"></script>
 </body>
 </html>
