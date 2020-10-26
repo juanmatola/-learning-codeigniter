@@ -20,7 +20,10 @@
       <td>Mark</td>
       <td class="mobile-none">Otto</td>
       <td><img src="https://via.placeholder.com/150" class="img-fluid"></td>
-      <td><button type="button" class="btn btn-danger">D</button><button type="button" class="btn btn-success">E</button></td>
+      <td>
+        <button type="button" class="btn btn-danger"><i class="far fa-trash-alt"></i></button>
+        <button type="button" class="btn btn-success"><i class="far fa-edit"></i></button>
+      </td>
     </tr>
   <?php } ?>
   </tbody>
