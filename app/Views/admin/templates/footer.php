@@ -27,7 +27,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="<?php echo base_url().'/admin/newpost'; ?>" method="post" id="newpostform">
+                <form action="<?php echo base_url().'/admin/newpost'; ?>" method="post" id="newpostform" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="title">Título</label>
                         <input type="text" class="form-control" id="title" name="title" placeholder="Un título para tu post..">
@@ -37,8 +37,9 @@
                         <textarea class="form-control" id="description" name="description" rows="3" placeholder="Breve descripción de tu post.."></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="img">Imagen</label>
-                        <input type="file" class="form-control-file" id="img" name="image">
+                        <label for="image">Imagen</label>
+                        <input type="file" class="form-control-file" id="image" name="image" accept="image/*">
+                        <?php //echo form_upload(array('class'=>'form-control-file','id'=>'image', 'name'=>'image')); ?>
                     </div>
                 </form>
             </div>
