@@ -55,8 +55,15 @@ class Admin extends BaseController
 
 		/*Si está logeado muestro panel*/
 		if ($this->sessionStatus()) {
-			echo view('admin/templates/header');
-			echo view('admin/index');
+
+			$userData = [
+				'username' => $_SESSION['username'],
+			];
+			$data = [
+
+			];
+			echo view('admin/templates/header', $userData);
+			echo view('admin/index', $data);
 			echo view('admin/templates/footer');
 		}else{
 			return redirect()->to(base_url().'/admin/?login=false');
