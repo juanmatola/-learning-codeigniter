@@ -16,7 +16,7 @@ class Portfolio extends BaseController
 	{
 		$postsModel = new PostsModel();
 		$postsData = [
-			'posts' => $postsModel->paginate(3,'group1'),
+			'posts' => $postsModel->paginate(6,'group1'),
 			'pager' => $postsModel->pager,
 		];
 		echo view('templates/header', $this->data);
