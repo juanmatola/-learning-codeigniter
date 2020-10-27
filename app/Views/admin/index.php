@@ -28,6 +28,6 @@
   <?php } ?>
   </tbody>
 </table>
-<div class="container">
-  <?= $pager->links() ?>
+<div class="container text-center">
+  <?= $pager->links('group1','bootstrap_pager') ?>
 </div>
