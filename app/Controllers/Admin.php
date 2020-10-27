@@ -55,7 +55,7 @@ class Admin extends BaseController
 
 		$postsModel = new PostsModel();
 		//$posts = array_reverse($postsModel->getPosts());
-		$posts = $postsModel->paginate(2, 'group1');
+		$posts = $postsModel->paginate(5, 'group1');
 
 		/*Si está logeado muestro panel*/
 		if ($this->sessionStatus()) {
