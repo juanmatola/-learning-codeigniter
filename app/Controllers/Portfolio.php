@@ -16,7 +16,8 @@ class Portfolio extends BaseController
 	{
 		$postsModel = new PostsModel();
 		$postsData = [
-			'posts' => array_reverse($postsModel->getPosts())
+			'posts' => $postsModel->paginate(3,'group1'),
+			'pager' => $postsModel->pager,
 		];
 		echo view('templates/header', $this->data);
 		echo view('pages/portfolio', $postsData);
