@@ -54,7 +54,7 @@ class Admin extends BaseController
 		session_start();
 
 		$postsModel = new PostsModel();
-		$posts = $postsModel->getPosts();
+		$posts = array_reverse($postsModel->getPosts());
 
 		/*Si está logeado muestro panel*/
 		if ($this->sessionStatus()) {
