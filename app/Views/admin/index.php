@@ -21,7 +21,7 @@
       <td class="mobile-none"><?php echo $post['description']; ?></td>
       <td class="table-img"><img src="<?php echo base_url().'/writable/uploads/portfolio/'.$post['image']; ?>" class="img-fluid"></td>
       <td>
-        <button type="button" class="btn btn-danger"data-toggle="modal" data-target="#deleteModal" ><i class="far fa-trash-alt"></i></button>
+        <a class="btn btn-danger" href="<?php echo base_url().'/admin/deletepost?id='.$post['id']; ?>" ><i class="far fa-trash-alt"></i></a>
         <button type="button" class="btn btn-success my-2 my-md-0"><i class="far fa-edit"></i></button>
       </td>
     </tr>

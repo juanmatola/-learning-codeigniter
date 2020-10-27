@@ -151,6 +151,15 @@ class Admin extends BaseController
 			return redirect()->to(base_url().'/admin/?login=false');
 		}
 
-		echo 'Eliminar un post';
+		$req = $this->request;
+		$id = $req->getGet('id');
+
+		if (isset($id)) {
+			$postsModel = new PostsModel();
+			$postsModel->delete($id);
+		}
+
+		return redirect()->to(base_url().'/admin/panel');
+
 	}
 }
