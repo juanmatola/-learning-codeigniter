@@ -28,3 +28,6 @@
   <?php } ?>
   </tbody>
 </table>
+<div class="container">
+  <?= $pager->links() ?>
+</div>

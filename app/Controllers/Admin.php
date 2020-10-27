@@ -54,7 +54,8 @@ class Admin extends BaseController
 		session_start();
 
 		$postsModel = new PostsModel();
-		$posts = array_reverse($postsModel->getPosts());
+		//$posts = array_reverse($postsModel->getPosts());
+		$posts = $postsModel->paginate(2);
 
 		/*Si está logeado muestro panel*/
 		if ($this->sessionStatus()) {
@@ -64,6 +65,7 @@ class Admin extends BaseController
 			];
 			$data = [
 				'posts' => $posts,
+				'pager' => $postsModel->pager,
 			];
 			echo view('admin/templates/header', $userData);
 			echo view('admin/index', $data);
