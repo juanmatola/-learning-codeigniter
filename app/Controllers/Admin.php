@@ -163,13 +163,13 @@ class Admin extends BaseController
 
 			$imgPath = './writable/uploads/portfolio/'.$imgName;
 
-			if (unlink($imgPath)) {
-				$postsModel->delete($id);
-				return redirect()->to(base_url().'/admin/panel?delete=success');
-			}else{
-				return redirect()->to(base_url().'/admin/panel?delete=err');
+			if (file_exists($imgPath)) {
+				unlink($imgPath);
 			}
+			$postsModel->delete($id);
+			return redirect()->to(base_url().'/admin/panel?delete=success');
 
+			//return redirect()->to(base_url().'/admin/panel?delete=err');
 		}
 
 
