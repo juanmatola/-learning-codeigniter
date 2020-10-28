@@ -50,6 +50,41 @@
         </div>
     </div>
 
+    <!-- Update Post Modal -->
+
+    <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="updateModalLabel">Editar Post</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="<?php echo base_url().'/admin/savepost'; ?>" method="post" id="updatepostform" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="title">Título</label>
+                        <input type="text" class="form-control" id="title" name="title" placeholder="Un título para tu post.." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Descripción</label>
+                        <textarea class="form-control" id="description" name="description" rows="3" placeholder="Breve descripción de tu post.."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Imagen</label>
+                        <input type="file" class="form-control-file" id="image" name="image" accept="image/*" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-success" form="updatepostform">Guardar</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Delete Post Modal -->
 
     <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" aria-hidden="true">
