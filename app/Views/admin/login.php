@@ -16,7 +16,7 @@
                 <img src="<?php echo base_url().'/assets/img/admin/athomic_logo.png'; ?>" alt="" class="login__container--img">
                 <?php echo form_open('/admin/login') ?>
                 
-                <form action="" method="POST">
+                
                     <div class="form-group">
                         <?php echo form_input(array('name'=>'username','type'=>'text','class'=>'form-control', 'placeholder'=>'Usuario', 'autocomplete'=>'on'))?>
                         <small id="emailHelp" class="form-text text-muted">Nunca compartiremos su correo electrónico con nadie más.</small>
@@ -28,7 +28,7 @@
                         <a href="/">Regresar</a>
                         <?php echo form_submit(array('type'=>'submit','class'=>'btn btn-primary','value'=>'Ingresar'))?>
                     </div>
-                </form>
+                
                 <?php echo form_close() ?>
             </div>
         </div>

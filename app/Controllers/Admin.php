@@ -53,10 +53,22 @@ class Admin extends BaseController
 	public function panel(){
 		session_start();
 
+		$postsModel = new PostsModel();
+		//$posts = array_reverse($postsModel->getPosts());
+		$posts = $postsModel->orderBy('id', 'DESC')->paginate(5, 'group1');
+
 		/*Si está logeado muestro panel*/
 		if ($this->sessionStatus()) {
-			echo view('admin/templates/header');
-			echo "<h1>BIENVENIDO A LA ADMINISTRACION<h1>";
+
+			$userData = [
+				'username' => $_SESSION['username'],
+			];
+			$data = [
+				'posts' => $posts,
+				'pager' => $postsModel->pager,
+			];
+			echo view('admin/templates/header', $userData);
+			echo view('admin/index', $data);
 			echo view('admin/templates/footer');
 		}else{
 			return redirect()->to(base_url().'/admin/?login=false');
@@ -65,6 +77,7 @@ class Admin extends BaseController
 	}
 
 	public function logout() {
+
 		session_start();
 		session_destroy();
 		return redirect()->to(base_url());
@@ -95,20 +108,60 @@ class Admin extends BaseController
 
 	//Posts methods
 
-	private function newPost() {
-		//solo podra llamarse desde panel
-		//Nuevo post
+	public function newPost() {
+		session_start();
+		if (!$this->sessionStatus()) {
+			return redirect()->to(base_url().'/admin/?login=false');
+		}
 
-		
+		//Obtengo informacion a cargar
+		$req = $this->request;
+		$img = $req->getFile('image');
+
+		//genero nombre para guardar
+		$imgName = $img->getRandomName();
+
+		//subo imagen
+		$path = './writable/uploads/portfolio/';
+		$img->move($path, $imgName);
+
+		$postData = array(
+			'title'=>$req->getPost('title'),
+			'description'=>$req->getPost('description'),
+			'image'=>$imgName,
+		);
+
+		//Guardo datos en db
+		$postsDb = new PostsModel();
+		$postsDb->insert($postData);
+
+		return redirect()->to(base_url().'/admin/panel?insert==okay');
 	}
 
-	private function modifyPost(){
-		//solo podra llamarse desde panel
-		//Modifica post prexistente
+	public function modifyPost(){
+		session_start();
+		if (!$this->sessionStatus()) {
+			return redirect()->to(base_url().'/admin/?login=false');
+		}
+
+		echo 'Modificar un post';
 	}
 
-	private function deletePost(){
-		//solo podra llamarse desde panel	
-		//Eliminar post
+	public function deletePost(){
+		session_start();
+		if (!$this->sessionStatus()) {
+			return redirect()->to(base_url().'/admin/?login=false');
+		}
+
+		$req = $this->request;
+		$id = $req->getGet('id');
+
+		if (isset($id)) {
+			$postsModel = new PostsModel();
+			$postsModel->delete($id);
+		}
+
+		return redirect()->to(base_url().'/admin/panel');
+
 	}
 }

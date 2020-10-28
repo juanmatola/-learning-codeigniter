@@ -1,0 +1,18 @@
+html {
+    scroll-behavior: smooth;
+}
+.scrolltop_btn{
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+}
+@media (max-width: 768px){
+    .mobile-none{
+        display: none;
+    }
+}
+@media (min-width: 768px){
+    .table-img{
+        max-width: 200px;
+    }
+}
