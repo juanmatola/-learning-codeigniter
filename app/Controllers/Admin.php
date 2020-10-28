@@ -23,7 +23,6 @@ class Admin extends BaseController
 
 	public function login ($user = null, $pass = null){
 		/* Recibo datos del formulario */
-		//$req = \Config\Services::request();
 		$req = $this->request;
 		$formData = array(
 			'username'=>$req->getPostGet('username'),
@@ -56,7 +55,6 @@ class Admin extends BaseController
 		session_start();
 
 		$postsModel = new PostsModel();
-		//$posts = array_reverse($postsModel->getPosts());
 		$posts = $postsModel->orderBy('id', 'DESC')->paginate(5, 'group1');
 
 		/*Si está logeado muestro panel*/
