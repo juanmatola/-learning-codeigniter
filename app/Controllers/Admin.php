@@ -135,7 +135,7 @@ class Admin extends BaseController
 		$postsDb = new PostsModel();
 		$postsDb->insert($postData);
 
-		return redirect()->to(base_url().'/admin/panel?insert==okay');
+		return redirect()->to(base_url().'/admin/panel?insert=success');
 	}
 
 	public function modifyPost(){
@@ -158,10 +158,20 @@ class Admin extends BaseController
 
 		if (isset($id)) {
 			$postsModel = new PostsModel();
-			$postsModel->delete($id);
+
+			$imgName = $postsModel->find($id)['image'];
+
+			$imgPath = './writable/uploads/portfolio/'.$imgName;
+
+			if (unlink($imgPath)) {
+				$postsModel->delete($id);
+				return redirect()->to(base_url().'/admin/panel?delete=success');
+			}else{
+				return redirect()->to(base_url().'/admin/panel?delete=err');
+			}
+
 		}
 
-		return redirect()->to(base_url().'/admin/panel');
 
 	}
 }
