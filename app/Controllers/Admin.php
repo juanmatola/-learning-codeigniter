@@ -108,7 +108,7 @@ class Admin extends BaseController
 
 	//Posts methods
 
-	public function newPost() {
+	public function savePost() {
 		session_start();
 		if (!$this->sessionStatus()) {
 			return redirect()->to(base_url().'/admin/?login=false');
@@ -132,18 +132,17 @@ class Admin extends BaseController
 			'image'=>$imgName,
 		);
 
+		//si recibo id update, sino insert
+		$id = $req->getGet('id');
+		if (isset($id)) {
+			$postData = array('id' => $id) + $postData;
+		}
+
 		//Guardo datos en db
 		$postsDb = new PostsModel();
-		$postsDb->insert($postData);
+		$postsDb->save($postData);
 
 		return redirect()->to(base_url().'/admin/panel?insert=success');
-	}
-
-	public function modifyPost(){
-		session_start();
-		if (!$this->sessionStatus()) {
-			return redirect()->to(base_url().'/admin/?login=false');
-		}
 	}
 
 	public function deletePost(){
