@@ -15,6 +15,10 @@
                         <div class="card-footer">
                             <small class=""><?php echo $post['title']; ?></small>
                         </div>
+                        <div class="card-description">
+                            <h4><?php echo $post['title']; ?></h4>
+                            <p class="text-justify"><?php echo $post['description']; ?></p>
+                        </div>
                     </div>
                 <?php }  ?>
 
