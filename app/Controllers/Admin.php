@@ -6,6 +6,8 @@ use App\Models\PostsModel;
 class Admin extends BaseController
 {
 
+	private $uploadPostPath = './writable/uploads/portfolio/'; 
+
 	public function __construct(){
 		helper('form');
 	}
@@ -116,33 +118,37 @@ class Admin extends BaseController
 		}
 
 		//Obtengo informacion a cargar
+		$postsModel = new PostsModel();
 		$req = $this->request;
 		$img = $req->getFile('image');
-
-		//genero nombre para guardar
-		$imgName = $img->getRandomName();
-
-		//subo imagen
-		$path = './writable/uploads/portfolio/';
-		$img->move($path, $imgName);
+		$id = $req->getGet('id');
 
 		$postData = array(
 			'title'=>$req->getPost('title'),
 			'description'=>$req->getPost('description'),
-			'image'=>$imgName,
 		);
 
-		//si recibo id update, sino insert
-		$id = $req->getGet('id');
+		//si recibo id es update sino es newpost
 		if (isset($id)) {
 			$postData = array('id' => $id) + $postData;
+			if ($img->isValid()) {
+				unlink($this->uploadPostPath.$postsModel->find($id)['image']);
+				$imgName = $img->getRandomName();
+				$postData = $postData + array('image' => $imgName);
+				$img->move($this->uploadPostPath, $imgName);
+			}
+		}else {
+			$imgName = $img->getRandomName();
+			$postData = $postData + array('image' => $imgName);
+			$img->move($this->uploadPostPath, $imgName);
 		}
 
-		//Guardo datos en db
-		$postsDb = new PostsModel();
-		$postsDb->save($postData);
+		//Guardo datos
+		$postsModel->save($postData);
 
+		//res
 		return redirect()->to(base_url().'/admin/panel?insert=success');
+
 	}
 
 	public function deletePost(){
@@ -159,7 +165,7 @@ class Admin extends BaseController
 
 			$imgName = $postsModel->find($id)['image'];
 
-			$imgPath = './writable/uploads/portfolio/'.$imgName;
+			$imgPath = $this->uploadPostPath.$imgName;
 
 			if (file_exists($imgPath)) {
 				unlink($imgPath);
