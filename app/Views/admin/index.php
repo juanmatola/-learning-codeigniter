@@ -22,7 +22,7 @@
       <td class="table-img"><img src="<?php echo base_url().'/writable/uploads/portfolio/'.$post['image']; ?>" class="img-fluid"></td>
       <td>
         <a class="btn btn-danger" href="<?php echo base_url().'/admin/deletepost?id='.$post['id']; ?>" ><i class="far fa-trash-alt"></i></a>
-        <button type="button" class="btn btn-success my-2 my-md-0"><i class="far fa-edit"></i></button>
+        <button type="button" class="btn btn-success my-2 my-md-0" data-toggle="modal" data-target="#updateModal" onclick="updateFormOpen('<?php echo $post['id']; ?>')"><i class="far fa-edit"></i></button>
       </td>
     </tr>
   <?php } ?>
@@ -31,3 +31,11 @@
 <div class="container">
   <?= $pager->links('group1','bootstrap_pager') ?>
 </div>
+
+<script>
+  function updateFormOpen(id){
+    let form = document.getElementById('updatepostform');
+      form.action = '/admin/savepost?id='+id;
+      console.log(form.action);
+  }
+</script>
