@@ -99,7 +99,7 @@
             <div class="modal-body">Selecciona "Eliminar" si estás listo para deshacerte del post.</div>
             <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-            <a class="btn btn-outline-danger" href="<?php echo base_url().'/admin/deletepost?id='/*AGREGAR ID DEL POST EN CUESTION*/; ?>">Eliminar</a>
+            <a class="btn btn-outline-danger" id="deleteModalButton" href="#">Eliminar</a>
             </div>
         </div>
         </div>

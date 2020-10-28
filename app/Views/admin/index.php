@@ -21,8 +21,9 @@
       <td class="mobile-none"><?php echo $post['description']; ?></td>
       <td class="table-img"><img src="<?php echo base_url().'/writable/uploads/portfolio/'.$post['image']; ?>" class="img-fluid"></td>
       <td>
-        <a class="btn btn-danger" href="<?php echo base_url().'/admin/deletepost?id='.$post['id']; ?>" ><i class="far fa-trash-alt"></i></a>
-        <button type="button" class="btn btn-success my-2 my-md-0" data-toggle="modal" data-target="#updateModal" onclick="updateFormOpen('<?php echo $post['id']; ?>')"><i class="far fa-edit"></i></button>
+        <!-- <a class="btn btn-danger" href="<?php echo base_url().'/admin/deletepost?id='.$post['id']; ?>" ><i class="far fa-trash-alt"></i></a> -->
+        <button type="button" class="btn btn-danger my-2" data-toggle="modal" data-target="#deleteModal" onclick="deleteModalOpen('<?php echo $post['id']; ?>')"><i class="far fa-trash-alt"></i></button>
+        <button type="button" class="btn btn-success my-2" data-toggle="modal" data-target="#updateModal" onclick="updateFormOpen('<?php echo $post['id']; ?>')"><i class="far fa-edit"></i></button>
       </td>
     </tr>
   <?php } ?>
@@ -36,6 +37,10 @@
   function updateFormOpen(id){
     let form = document.getElementById('updatepostform');
       form.action = '/admin/savepost?id='+id;
-      console.log(form.action);
+  }
+  function deleteModalOpen(id){
+    let deleteModalButton = document.getElementById('deleteModalButton');
+    deleteModalButton.href = '/admin/deletepost?id='+id;
+    console.log(deleteModalButton);
   }
 </script>
