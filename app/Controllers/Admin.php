@@ -112,6 +112,7 @@ class Admin extends BaseController
 		session_start();
 		if (!$this->sessionStatus()) {
 			return redirect()->to(base_url().'/admin/?login=false');
+			exit;
 		}
 
 		//Obtengo informacion a cargar
@@ -143,8 +144,6 @@ class Admin extends BaseController
 		if (!$this->sessionStatus()) {
 			return redirect()->to(base_url().'/admin/?login=false');
 		}
-
-		echo 'Modificar un post';
 	}
 
 	public function deletePost(){
@@ -156,7 +155,7 @@ class Admin extends BaseController
 		$req = $this->request;
 		$id = $req->getGet('id');
 
-		if (isset($id)) {
+		if (isset($id) && $id != '') {
 			$postsModel = new PostsModel();
 
 			$imgName = $postsModel->find($id)['image'];
@@ -169,9 +168,9 @@ class Admin extends BaseController
 			$postsModel->delete($id);
 			return redirect()->to(base_url().'/admin/panel?delete=success');
 
-			//return redirect()->to(base_url().'/admin/panel?delete=err');
 		}
-
+		
+		return redirect()->to(base_url().'/admin/panel?delete=err');
 
 	}
 }
