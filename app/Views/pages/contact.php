@@ -1,6 +1,6 @@
 <section id="contact">
   
-  <h1 class="section-header">CONTACTO</h1>
+  <h1 class="text-center">Contacto</h1>
   
   <div class="contact-wrapper">
     
