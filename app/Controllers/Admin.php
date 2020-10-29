@@ -85,7 +85,7 @@ class Admin extends BaseController
 		return redirect()->to(base_url());
 	}
 
-	//Sessions methods
+	//Private methods
 
 	private function sessionStatus() {
 		$sessionStatus = session_status();
@@ -108,6 +108,14 @@ class Admin extends BaseController
 		}
 	}
 
+	private function fileValidation($file) {
+		if ($file->getSize() < $this->maxSize && in_array($file->getExtension(), $this->allowedExtensions)) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+
 	//Posts methods
 
 	public function savePost() {
@@ -117,43 +125,41 @@ class Admin extends BaseController
 			exit;
 		}
 
-		//Obtengo informacion a cargar
 		$postsModel = new PostsModel();
 		$req = $this->request;
 		$img = $req->getFile('image');
 		$id = $req->getGet('id');
-
 		$postData = array(
 			'title'=>$req->getPost('title'),
 			'description'=>$req->getPost('description'),
 		);
 
-		if ($img->getSize() > $this->maxSize || !in_array($img->getExtension(), $this->allowedExtensions)) {
-			return redirect()->to(base_url().'/admin/panel?insert=file_err');
-			exit;
-		}
-
-		//si recibo id es update sino es newpost
-		if (isset($id)) {
-			$postData = array('id' => $id) + $postData;
-			if ($img->isValid()) {
-				unlink($this->uploadPostPath.$postsModel->find($id)['image']);
+		if($img->isValid()){
+			if ($this->fileValidation($img)){
 				$imgName = $img->getRandomName();
-				$postData = $postData + array('image' => $imgName);
 				$img->move($this->uploadPostPath, $imgName);
+				if(isset($id)){
+					unlink($this->uploadPostPath.$postsModel->find($id)['image']);
+					$postData = array('id' => $id) + $postData + array('image' => $imgName);
+				}else{
+					$postData = $postData + array('image' => $imgName);
+				}
+			}
+			else{
+				return redirect()->to(base_url().'/admin/panel?insert=file_err');
+				exit;
 			}
 		}else {
-			$imgName = $img->getRandomName();
-			$postData = $postData + array('image' => $imgName);
-			$img->move($this->uploadPostPath, $imgName);
+			if(isset($id)){
+				$postData = array('id' => $id) + $postData;
+			}
+			else{
+				return redirect()->to(base_url().'/admin/panel?insert=file_err');
+				exit;
+			}
 		}
-
-		//Guardo datos
 		$postsModel->save($postData);
-
-		//res
 		return redirect()->to(base_url().'/admin/panel?insert=success');
-
 	}
 
 	public function deletePost(){
