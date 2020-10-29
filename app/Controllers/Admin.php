@@ -6,7 +6,9 @@ use App\Models\PostsModel;
 class Admin extends BaseController
 {
 
-	private $uploadPostPath = './writable/uploads/portfolio/'; 
+	private $uploadPostPath = './writable/uploads/portfolio/';
+	private $allowedExtensions = array('jpg','jpeg','png');
+	private	$maxSize = 3000000; // Bytes 
 
 	public function __construct(){
 		helper('form');
@@ -125,6 +127,11 @@ class Admin extends BaseController
 			'title'=>$req->getPost('title'),
 			'description'=>$req->getPost('description'),
 		);
+
+		if ($img->getSize() > $this->maxSize || !in_array($img->getExtension(), $this->allowedExtensions)) {
+			return redirect()->to(base_url().'/admin/panel?insert=file_err');
+			exit;
+		}
 
 		//si recibo id es update sino es newpost
 		if (isset($id)) {
