@@ -41,6 +41,69 @@
   function deleteModalOpen(id){
     let deleteModalButton = document.getElementById('deleteModalButton');
     deleteModalButton.href = '/admin/deletepost?id='+id;
-    console.log(deleteModalButton);
   }
+
+  class InfoModal{
+        constructor(modalId, labelId, bodyId){
+          this.modalId = modalId;
+          this.modal = document.getElementById(modalId);
+          this.body = document.getElementById(labelId);
+          this.label = document.getElementById(bodyId);
+        }
+
+        show(label, body){
+          this.label.innerHTML = label;
+          this.body.innerHTML = body;
+          $('#' + this.modalId).modal('show');
+        }
+    };
+
+    let possibleResponses = {
+      insert: {ok: 'success', err: 'file_err'},
+      delete: {ok: 'success', err: 'err'},
+    }
+
+    let infoModal = new InfoModal('infoModal', 'infoModalLabel', 'infoModalBody');
+    let url = new URL(document.URL);
+
+    if (!(url.search === '')){
+      let getResponse = url.searchParams;
+      let insertResponse = getResponse.get('insert');
+      let deleteResponse = getResponse.get('delete');
+
+      switch (insertResponse) {
+        case possibleResponses.insert.ok:
+          console.log('insert okay');
+          break;
+      
+        case possibleResponses.insert.err:
+          console.log('insert error');
+          break;
+
+        default:
+          break;
+      }
+
+      switch (deleteResponse) {
+        case possibleResponses.delete.ok:
+          console.log('delete okay');
+          
+          break;
+      
+        case possibleResponses.delete.err:
+          console.log('delete error');
+          
+          break;
+
+        default:
+          break;
+      }
+
+    }
+
+
+    let modalaa = document.getElementById('infoModal');
+    console.log('aca abajo')
+    console.log(modalaa)
+
 </script>
