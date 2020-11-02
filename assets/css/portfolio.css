@@ -22,7 +22,7 @@
   }
   
   .gallery-object:hover{
-    transform: scale(1.05);
+    /*transform: scale(1.05);*/
     transition: 0.5s;
   }
   
@@ -59,3 +59,13 @@
   transition: .5s;
 }
 
+/*pagination*/
+
+.page-item.active .page-link {
+  background-color: #343a40 !important;
+  border-color: unset !important;
+  color: white !important;
+}
+.page-item .page-link{
+  color: black !important;
+} 
