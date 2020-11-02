@@ -6,9 +6,9 @@ class InfoModal{
     this.body = document.getElementById(bodyId);
     }
 
-    show(label, body){
+    show(label, body, icon){
     this.label.innerHTML = label;
-    this.body.innerHTML = body;
+    this.body.innerHTML = `<div>${icon}</div></br> ${body}`;
     $('#' + this.modalId).modal('show');
     }
 };
@@ -28,11 +28,11 @@ if (!(url.search === '')){
 
     switch (insertResponse) {
         case possibleResponses.insert.ok:
-            infoModal.show('Éxito', 'Los datos se han guardado correctamente.');
+            infoModal.show('Éxito', 'Los datos se han guardado correctamente.', '<i class="far fa-check-circle text-success"></i>');
         break;
     
         case possibleResponses.insert.err:
-            infoModal.show('Ups..', 'Asegurate de que el archivo que intentas subir: <br><br> - Pesa menos de 3Mb. <br><br> - Es un archivo permitido (.png , .jpeg, .jpg).');
+            infoModal.show('Ups..', 'Asegurate de que el archivo que intentas subir: <br><br> - Pesa menos de 3Mb. <br><br> - Es un archivo permitido (.png , .jpeg, .jpg).', '<i class="fas fa-exclamation-circle text-danger"></i>');
         break;
 
         default:
@@ -41,11 +41,11 @@ if (!(url.search === '')){
 
     switch (deleteResponse) {
         case possibleResponses.delete.ok:
-            infoModal.show('Éxito', 'Los datos se han eliminado correctamente.');
+            infoModal.show('Éxito', 'Los datos se han eliminado correctamente.', '<i class="far fa-check-circle text-success"></i>');
         break;
     
         case possibleResponses.delete.err:
-            infoModal.show('Ups..', 'Ocurrió algún error al intentar eliminar el post, si el error persiste comunícate con el soporte');
+            infoModal.show('Ups..', 'Ocurrió algún error al intentar eliminar el post, si el error persiste comunícate con el soporte', '<i class="fas fa-exclamation-circle text-danger"></i>');
         break;
 
         default:
