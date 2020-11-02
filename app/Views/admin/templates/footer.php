@@ -1,7 +1,19 @@
 
         </div>
+
         <!-- Footer -->
-        <footer class="sticky-footer bg-light py-3">
+        <footer class="sticky-footer bg-dark py-3  text-light">
+            <div class="container">
+                <div class="row pb-3 justify-content-around align-items-center">
+                    <div class="col-12 col-md-4 text-center text-muted">
+                        <p class="strong">Soporte:</p>
+                        <p class="font-italic">soporte@athomic.com.ar <br>+54 9 341 6 189654</p>
+                    </div>
+                    <div class="col-12 col-md-4 text-center">
+                        <a href="http://athomic.com.ar"><img src="<?php echo base_url().'/assets/img/admin/athomic_logo.png';?>" class="img-fluid w-50" alt="logo athomic"></a>
+                    </div>
+                </div>
+            </div>
             <div class="container my-auto">
                 <div class="copyright text-center my-auto">
                     <span>Copyright &copy; athomic 2020</span>
