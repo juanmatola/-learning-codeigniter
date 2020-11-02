@@ -31,11 +31,11 @@
       <div class="direct-contact-container">
 
         <ul class="contact-list">
-          <li class="list-item"><i class="fas fa-map-marker-alt "></i><span class="contact-text place">Seattle | WA</span></i></li>
+          <li class="list-item"><i class="fas fa-map-marker-alt "></i><span class="contact-text place">Rosario | Santa Fe</span></i></li>
           
-          <li class="list-item"><i class="fa fa-phone"><span class="contact-text phone"><a href="tel:1-212-555-5555" title="Give me a call">(212) 555-2368</a></span></i></li>
+          <li class="list-item"><i class="fa fa-phone"><span class="contact-text phone"><a href="tel:1-212-555-5555" title="Charlemos!">(212) 555-2368</a></span></i></li>
           
-          <li class="list-item"><i class="fa fa-envelope "><span class="contact-text gmail"><a href="mailto:#" title="Send me an email">emailme@gmail.com</a></span></i></li>
+          <li class="list-item"><i class="fa fa-envelope "><span class="contact-text gmail"><a href="mailto:#" title="Envíame un e-mail">emailme@gmail.com</a></span></i></li>
         </ul>
 
         <hr>
