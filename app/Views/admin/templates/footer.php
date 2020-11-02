@@ -134,9 +134,9 @@
                 <span aria-hidden="true">×</span>
             </button>
             </div>
-            <div class="modal-body" id="infoModalBody"> <!-- Server Response Info by js --></div>
+            <div class="modal-body" id="infoModalBody"><!-- Server Response Info by js --></div>
             <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cerrar</button>
+            <button class="btn btn-outline-success" type="button" data-dismiss="modal">Ok!</button>
             </div>
         </div>
         </div>
