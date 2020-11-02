@@ -32,14 +32,3 @@
 <div class="container">
   <?= $pager->links('group1','bootstrap_pager') ?>
 </div>
-
-<script>
-  function updateFormOpen(id){
-    let form = document.getElementById('updatepostform');
-      form.action = '/admin/savepost?id='+id;
-  }
-  function deleteModalOpen(id){
-    let deleteModalButton = document.getElementById('deleteModalButton');
-    deleteModalButton.href = '/admin/deletepost?id='+id;
-  }
-</script>

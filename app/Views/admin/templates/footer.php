@@ -146,65 +146,7 @@
     <script src="<?php echo base_url().'/assets/libs/jquery-3.5.1/jquery.min.js' ?>"></script>
     <!-- Bootstrap JS + Popper -->
     <script src="<?php echo base_url().'/assets/libs/bootstrap-4.5.3/js/bootstrap.bundle.min.js' ?>"></script>
-
-    <script>
-    class InfoModal{
-        constructor(modalId, labelId, bodyId){
-        this.modalId = modalId;
-        this.modal = document.getElementById(modalId);
-        this.label = document.getElementById(labelId);
-        this.body = document.getElementById(bodyId);
-        }
-
-        show(label, body){
-        this.label.innerHTML = label;
-        this.body.innerHTML = body;
-        $('#' + this.modalId).modal('show');
-        }
-    };
-
-    let possibleResponses = {
-    insert: {ok: 'success', err: 'file_err'},
-    delete: {ok: 'success', err: 'err'},
-    };
-    
-    let infoModal = new InfoModal('infoModal', 'infoModalLabel', 'infoModalBody');
-    let url = new URL(document.URL);
-
-    if (!(url.search === '')){
-        let getResponse = url.searchParams;
-        let insertResponse = getResponse.get('insert');
-        let deleteResponse = getResponse.get('delete');
-
-        switch (insertResponse) {
-            case possibleResponses.insert.ok:
-                infoModal.show('Aviso', 'Muy bien, Los datos se han guardado exitosamente');
-            break;
-        
-            case possibleResponses.insert.err:
-                infoModal.show('Aviso', 'Asegurate de que el archivo que intentas subir: <br><br> - Pesa menos de 3Mb. <br><br> - Es un archivo permitido (.png , .jpeg, .jpg).');
-            break;
-
-            default:
-            break;
-        }
-
-        switch (deleteResponse) {
-            case possibleResponses.delete.ok:
-                infoModal.show('Aviso', 'Muy bien, Los datos se han eliminado correctamente.');
-            break;
-        
-            case possibleResponses.delete.err:
-                infoModal.show('Aviso', 'Ups.. Ocurrió algun error al intentar eliminar el post, si el error persiste comunicate con el soporte');
-            break;
-
-            default:
-            break;
-        }
-
-    }
-
-
-    </script>
+    <!-- Modals JS -->
+    <script src="<?php echo base_url().'/assets/js/admin/panel/modals.js' ?>"></script>
 </body>
 </html>
